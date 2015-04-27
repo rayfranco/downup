@@ -1,0 +1,41 @@
+{
+  "name": "downup",
+  "version": "0.0.1",
+  "description": "Tiny listener for numerical value changes.",
+  "main": "index.js",
+  "keywords": [
+    "emitter",
+    "listener",
+    "numerical",
+    "up",
+    "down",
+    "waypoint",
+    "scroll"
+  ],
+  "license": "MIT",
+  "author": "rayfranco <fbouly@gmail.com> (http://rayfran.co)",
+  "homepage": "https://github.com/rayfranco/downup",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rayfranco/downup"
+  },
+  "bugs": {
+    "url": "https://github.com/rayfranco/downup/issues"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "uglify": "uglifyjs build/downup.js -o build/downup.min.js -m --screw-ie8",
+    "browserify": "browserify index.js -o build/downup.js",
+    "build": "npm run browserify && npm run uglify",
+    "postbrowserify": "cat build/downup.js | pbcopy && echo \"/*!\\n * downup.js\\n * https://github.com/rayfranco/downup\\n *\\n * Copyright 2015 Franco Bouly\\n * Released under the MIT license\\n */\\n\" > build/downup.js && pbpaste >> build/downup.js",
+    "postuglify": "cat build/downup.min.js | pbcopy && echo \"/*!\\n * downup.js\\n * https://github.com/rayfranco/downup\\n *\\n * Copyright 2015 Franco Bouly\\n * Released under the MIT license\\n */\\n\" > build/downup.min.js && pbpaste >> build/downup.min.js"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.8",
+    "mocha": "^2.0.1",
+    "uglify-js": "^2.4.20"
+  },
+  "dependencies": {
+    "tiny-emitter": "^1.0.0"
+  }
+}
