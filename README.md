@@ -12,6 +12,8 @@ $ npm install downup --save
 
 ## Usage
 
+### Basic examples
+
 ```javascript
 var Downup = require('downup');
 
@@ -37,6 +39,23 @@ downup.off(1);
 
 // Will not trigger since the listener has been removed
 downup.update(0);
+```
+
+### Sticky example
+
+```javascript
+// Update on scroll (please debounce this ;)
+window.addEventListener('scroll', function(e){
+  downup.update(window.scrollY);
+});
+
+// Listen to menu and add sticky class
+var menu = document.querySelector('#menu');
+
+downup.on(menu.offsetTop, function(diff){ 
+  menu.classList[diff > 0 ? 'add' : 'remove']('stick');
+});
+
 ```			
 
 ## Instance Methods
