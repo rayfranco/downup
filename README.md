@@ -1,6 +1,6 @@
 # downup [![Build Status](https://travis-ci.org/rayfranco/downup.svg?branch=master)](https://travis-ci.org/rayfranco/downup)
 
-Tiny listener on numerical value changes.
+Tiny listener on numerical value changes. Works in Node and with [Browserify](http://browserify.org/).
 
 ## Install
 
