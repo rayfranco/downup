@@ -1,4 +1,4 @@
-# downup
+# downup [![Build Status](https://travis-ci.org/rayfranco/downup.svg?branch=master)](https://travis-ci.org/rayfranco/downup)
 
 Tiny listener on numerical value changes.
 
